@@ -1,0 +1,10 @@
+.idea
+
+/config/*
+!/config/.gitkeep
+
+/plugins/*
+!/plugins/.gitkeep
+
+/themes/*
+!/themes/.gitkeep
