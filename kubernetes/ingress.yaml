@@ -3,11 +3,12 @@ kind: Ingress
 metadata:
   name: uctoservis-ingress
   namespace: default
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "uctoservis-web"
 spec:
   rules:
     - http:
         paths:
-          - path: /
-            backend:
+          - backend:
               serviceName: grav-uctoservis-svc
-              servicePort: 80
+              servicePort: 8080

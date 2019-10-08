@@ -15,16 +15,20 @@ spec:
       containers:
         - name: grav
           image: eu.gcr.io/uctoservis/grav-uctoservis:latest
+          readinessProbe:
+            httpGet:
+              path: /robots.txt
+              port: 8080
           ports:
             - containerPort: 8080
               name: http
               protocol: TCP
           resources:
             requests:
-              memory: "4Mi"
+              memory: "300Mi"
               cpu: "10m"
             limits:
-              memory: "16Mi"
+              memory: "400Mi"
               cpu: "100m"
           volumeMounts:
             - name: user-data

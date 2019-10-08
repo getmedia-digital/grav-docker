@@ -80,10 +80,14 @@ COPY --chown=nobody:nobody plugins/ /var/www/html/user/plugins/
 COPY --chown=nobody:nobody themes/ /var/www/html/user/themes/
 COPY --chown=nobody:nobody config/ /var/www/html/user/config/
 
+USER root
+RUN chmod -R 777 /var/www/html/user
+USER nobody
+
 WORKDIR /var/www/html
 
 EXPOSE 8080
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
-HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping
+#HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping

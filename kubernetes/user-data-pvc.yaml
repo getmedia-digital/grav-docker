@@ -1,3 +1,20 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: user-data
+  labels:
+    name: user-data
+spec:
+  capacity:
+    storage: 10Gi
+  storageClassName: standard
+  accessModes:
+    - ReadWriteMany
+  gcePersistentDisk:
+    pdName: user-data
+    fsType: ext4
+    readOnly: true
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -5,7 +22,7 @@ metadata:
 spec:
   storageClassName: standard
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
-      storage: 5Gi
+      storage: 10Gi
