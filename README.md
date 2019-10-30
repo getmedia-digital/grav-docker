@@ -4,7 +4,7 @@
 
 GRAV CMS Docker is build on Alpine linux which provides small, stable and effective environment for running the awesome [GRAV CMS](https://getgrav.org). It is optimised for both, production and development.
 
-Get this image grom [Docker Hub](https://hub.docker.com/r/getmedia/grav-cms).
+Get this image from [Docker Hub](https://hub.docker.com/r/getmedia/grav-cms).
 ```
 getmedia/grav-cms
 ```
@@ -76,7 +76,7 @@ You are free to contribute this project, just create a Pull request. We will rev
 
 ## Support
 
-We are happy to provide support. Just contact us on support@getmedia.digital, ask on GRAV CMS Discord or bring up an issue.
+We are happy to provide support. Just contact us on support@getmedia.digital, ask on [GRAV CMS Discord](https://discord.gg/5VhYVkR) or bring up an [issue](https://github.com/getmedia-digital/grav-docker/issues/new).
 
 ## License
 
