@@ -1,7 +1,19 @@
 .idea
 
+/accounts/*
+!/accounts/.gitkeep
+
 /config/*
 !/config/.gitkeep
+
+/data/*
+!/data/.gitkeep
+
+/images/*
+!/images/.gitkeep
+
+/pages/*
+!/pages/.gitkeep
 
 /plugins/*
 !/plugins/.gitkeep

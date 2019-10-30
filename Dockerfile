@@ -68,7 +68,9 @@ USER nobody
 
 WORKDIR /tmp
 
-ENV GRAV_VERSION latest
+# TODO set version by env
+# TODO env grav / grav-admin
+ENV GRAV_VERSION latest 
 
 # Download GRAV
 RUN curl -o grav.zip -SL https://getgrav.org/download/core/grav-admin/${GRAV_VERSION} && \
@@ -76,18 +78,15 @@ RUN curl -o grav.zip -SL https://getgrav.org/download/core/grav-admin/${GRAV_VER
     mv -f /tmp/grav-admin /var/www/html  && \
     rm grav.zip
 
-COPY --chown=nobody:nobody plugins/ /var/www/html/user/plugins/
-COPY --chown=nobody:nobody themes/ /var/www/html/user/themes/
-COPY --chown=nobody:nobody config/ /var/www/html/user/config/
-
 USER root
 RUN chmod -R 777 /var/www/html/user
 USER nobody
 
 WORKDIR /var/www/html
 
+# TODO set port by env
 EXPOSE 8080
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
 
-#HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping
+HEALTHCHECK --timeout=10s CMD curl --silent --fail http://127.0.0.1:8080/fpm-ping

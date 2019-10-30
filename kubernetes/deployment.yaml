@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: grav
-          image: eu.gcr.io/uctoservis/grav-uctoservis:latest
+          image: eu.gcr.io/uctoservis/grav-uctoservis:1.0.0
           readinessProbe:
             httpGet:
               path: /robots.txt
