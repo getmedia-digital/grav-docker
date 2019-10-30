@@ -78,6 +78,8 @@ We are happy to provide support. Just contact us on support@getmedia.digital, as
 
 ## License
 
+This project is under GNU GPL v3. See [license](LICENSE)
+
 ## Maintaner
 
 GRAV CMS Image is maintained by [GET Media Digital](https://getmedia.digital).
